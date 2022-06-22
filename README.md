@@ -18,16 +18,4 @@ Bigger the model, more prone it is to overfitting. This is particularly noticeab
 Increasing the number of parameters means you need to increase your existing computational resources
 A solution for this, as the paper suggests, is to move on to sparsely connected network architectures which will replace fully connected network architectures, especially inside convolutional layers. This idea can be conceptualized in the below images:Sparsely connected architecture
 
-This paper proposes a new idea of creating deep architectures. This approach lets you maintain the “computational budget”, while increasing the depth and width of the network. Sounds too good to be true! This is how the conceptualized idea looks:Inception Modules are incorporated into convolutional neural networks (CNNs) as a way of reducing computational expense. As a neural net deals with a vast array of images, with wide variation in the featured image content, also known as the salient parts, they need to be designed appropriately. The most simplified version of an inception module works by performing a convolution on an input with not one, but three different sizes of filters (1x1, 3x3, 5x5). Also, max pooling is performed. Then, the resulting outputs are concatenated and sent to the next layer. By structuring the CNN to perform its convolutions on the same level, the network gets progressively wider, not deeper. To make the process even less computationally expensive, the neural network can be designed to add an extra 1x1 convolution before the 3x3 ad 5x5 layers. By doing so, the number of input channels is limited and 1x1 convolutions are far cheaper than 5x5 convolutions. It is important to note, however, that the 1x1 convolution is added after the max-pooling layer, rather than before. 
-
-Inception net achieved a milestone in CNN classifiers when previous models were just going deeper to improve the performance and accuracy but compromising the computational cost. The Inception network, on the other hand, is heavily engineered. It uses a lot of tricks to push performance, both in terms of speed and accuracy. It is the winner of the ImageNet Large Scale Visual Recognition Competition in 2014, an image classification competition, which has a significant improvement over ZFNet (The winner in 2013), AlexNet (The winner in 2012) and has relatively lower error rate compared with the VGGNet (1st runner-up in 2014).
-
-The major issues faced by deeper CNN models such as VGGNet were:
-
-Although, previous networks such as VGG achieved a remarkable accuracy on the ImageNet dataset, deploying these kinds of models is highly computationally expensive because of the deep architecture.
-Very deep networks are susceptible to overfitting. It is also hard to pass gradient updates through the entire network.
-Before digging into Inception Net model, it’s essential to know an important concept that is used in Inception network:
-
-1 X 1 convolution: A 1×1 convolution simply maps an input pixel with all its respective channels to an output pixel. 1×1 convolution is used as a dimensionality reduction module to reduce computation to an extent.
-
-For instance, we need to perform 5×5 convolution without using 1×1 convolution as below:
+This paper proposes a new idea of creating deep architectures.
